@@ -21,6 +21,7 @@ public class SubscriptionConfig {
     private String table = "table";
     private boolean cooldowns = true;
     private int cooldownTime = 3;
+    private boolean updateCheck = true;
 
     public SubscriptionConfig() {
     }
@@ -40,6 +41,7 @@ public class SubscriptionConfig {
         table = Settinger.ofString("database.table");
         cooldowns = Settinger.ofBoolean("cooldown.enabled");
         cooldownTime = Settinger.ofInt("cooldown.time");
+        updateCheck = Settinger.ofBoolean("update-check");
     }
     public String getDefaultLanguage() {
         return defaultLanguage;
@@ -91,6 +93,10 @@ public class SubscriptionConfig {
 
     public int getCooldownTime() {
         return cooldownTime;
+    }
+
+    public boolean isUpdateCheck() {
+        return updateCheck;
     }
 
     public static SubscriptionConfig getInstance() {

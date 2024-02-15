@@ -14,6 +14,7 @@ import me.xflyiwnl.hsubscription.task.SubscriptionTask;
 import me.xflyiwnl.hsubscription.task.Task;
 import me.xflyiwnl.hsubscription.util.Metrics;
 import me.xflyiwnl.hsubscription.util.SubscriptionUtil;
+import me.xflyiwnl.hsubscription.util.Updater;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -59,6 +60,11 @@ public final class HSubscription extends JavaPlugin {
         task.startTask(config.getTaskTime() * 20);
 
         metrics = new Metrics(this, 21005);
+
+        if (config.isUpdateCheck()) {
+            Updater.check();
+        }
+
     }
 
     @Override

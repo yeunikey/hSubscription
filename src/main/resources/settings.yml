@@ -4,6 +4,7 @@ settings:
 
   language: "ru_RU"
   date-format: "HH:mm dd-MM-yyyy"
+  update-check: true
 
   gui:
     subscription: "ru_RU/subscription.yml"

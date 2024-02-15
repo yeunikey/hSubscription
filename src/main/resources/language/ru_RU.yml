@@ -1,5 +1,8 @@
 language:
 
+  update-last: "&fУстановлена последняя версия плагина - #00BB90%version%"
+  need-update: "&cНовая версия плагина найдена! Ссылка на скачивание - %url%"
+
   command-args:
     - ""
     - "#00BB90&lhSubscription &7› &fсписок аргументов:"
