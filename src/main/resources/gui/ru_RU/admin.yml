@@ -1,0 +1,50 @@
+gui:
+  title: "Админ меню"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BBBPBNBBB"
+
+subscription-item:
+  material: book
+  name: "#00BB90Подписка %name%"
+  lore:
+    - " &8описание"
+    - " "
+    - "  &fвыдан: #00BB90%registeredDate%"
+    - "  &fдо: #00BB90%penaltyDate%"
+    - " "
+    - " &fосталось #00BB90%date%"
+    - ""
+    - " #00BB90клик &7— &fредактировать"
+    - " "
+
+items:
+
+  next-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90След. страница"
+    action:
+      - "[next]"
+    mask: "N"
+
+  prev-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90Пред. страница"
+    action:
+      - "[prev]"
+    mask: "P"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fразработано #00BB90helium-dev.online"
+    mask: "B"
+

@@ -1,0 +1,53 @@
+gui:
+  title: "Подписка %name%"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOSOOOB"
+    - "BOOOOOOOB"
+    - "BBBBDBBBB"
+
+items:
+
+  subscription-item:
+    material: "flower_banner_pattern"
+    amount: 1
+    name: "#00BB90Подписка"
+    lore:
+      - " &8описание"
+      - " "
+      - "  &fвыдан: #00BB90%registeredDate%"
+      - "  &fдо: #00BB90%penaltyDate%"
+      - " "
+      - " &fосталось #00BB90%date%"
+      - ""
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fосталось времени #00BB90%date%"
+    mask: "S"
+
+  donate-item:
+    material: "emerald"
+    amount: 1
+    name: "#00BB90Купить"
+    lore:
+      - " &8услуги"
+      - " "
+      - "  &fКупить / продлить подписку"
+      - "  &fвы сможете у нас на сайте!"
+      - " "
+      - " #00BB90▪ helium-dev.online"
+      - " "
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fкупить #00BB90helium-dev.online"
+      - "[cmd]:donate"
+    mask: "D"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fразработано #00BB90helium-dev.online"
+    mask: "B"
+

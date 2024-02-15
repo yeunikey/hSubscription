@@ -1,0 +1,82 @@
+language:
+
+  command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &fсписок аргументов:"
+    - ""
+    - "  &7▪ #00BB90show #009B6C[игрок] &7— &fпосмотреть подписку"
+    - "  &7▪ #00BB90notify &7— &fуведомлять при входе"
+    - ""
+    - "&7@ Разработано helium™"
+    - ""
+
+  admin-command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &fсписок аргументов:"
+    - ""
+    - "  &7▪ #00BB90set #009B6C[игрок] #009B6C[дата] &7— &fизменить подписку"
+    - "  &7▪ #00BB90give #009B6C[игрок] #009B6C[дата] &7— &fотнять у подписки"
+    - "  &7▪ #00BB90take #009B6C[игрок] #009B6C[дата] &7— &fдобавить подписке"
+    - "  &7▪ #00BB90gui &7— &fадмин-меню"
+    - ""
+    - "  &7▪ #00BB90editor &7— &fонлайн эдитор"
+    - "  &7▪ #00BB90applyedits #009B6C[ключ] &7— &fприменить настройки"
+    - ""
+    - "&7@ Разработано helium™"
+    - ""
+
+  console-show:
+    - " "
+    - " &fИмя: #00BB90%name%"
+    - " "
+    - " &fВыдано: #00BB90%registeredDate%"
+    - " &fДо: #00BB90%penaltyDate%"
+    - " "
+    - " &fОсталось: #00BB90%date%"
+    - " "
+
+  no-permission: "#00BB90&lhSubscription &7› &fу вас нет прав :L"
+  no-subscription: "#00BB90&lhSubscription &7› &fподписки не существует"
+
+  args-error: "#00BB90&lhSubscription &7› &fнедостаточно аргументов для полноценной команды"
+  date-error: "#00BB90&lhSubscription &7› &fошибка формата даты. Вот примеры, &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]"
+  console-error: "#00BB90&lhSubscription &7› &fдля консолей данная команда запрещена :)"
+  action-error: "#00BB90&lhSubscription &7› &fдействие такого типа не существует"
+  editor-error: "#00BB90&lhSubscription &7› &fпроизошла какая-та ошибка"
+
+  subscription-change: "#00BB90&lhSubscription &7› &fвремя подписки для #00BB90%name% &fизменено на #00BB90%penaltyDate%"
+  subscription-remove: "#00BB90&lhSubscription &7› &fподписка у #00BB90%name% &fтеперь недействителен"
+
+  notify-change-on: "#00BB90&lhSubscription &7› &fтеперь вы &aполучаете &fуведомления"
+  notify-change-off: "#00BB90&lhSubscription &7› &fтеперь вы &cне получаете &fуведомления"
+
+  reloaded: "#00BB90&lhSubscription &7› &fконфигурация перезагружена"
+
+  kick-message:
+    - "#00BB90hSubscription"
+    - ""
+    - "&fУ вас нет подписки :("
+    - ""
+    - "&fПриобрести его вы сможете"
+    - "&fздесь: #00BB90helium-dev.online"
+
+  notification-message:
+    - "#00BB90&lhSubscription &7› &fосталось времени до истечения подписки #00BB90%date%"
+
+  cooldown-message: "#00BB90&lhSubscription &7› &fКулдаун! Попробуйте попытку чуть позже."
+
+  action-type: "#00BB90&lhSubscription &7› &fВыберите действие: &7[#00BB90remove, set, give, take&7]"
+  action-format: "#00BB90&lhSubscription &7› &fНапишите форматированную дату. Например, &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]"
+
+  editor-generate: "#00BB90&lhSubscription &7› &fГенерирую ссылку для вас..."
+  editor-url: "#00BB90&lhSubscription &7› &fСгенерировано! Ваша ссылка - #00BB90%url%"
+
+  editor-apply: "#00BB90&lhSubscription &7› &fПрименяю настройки ключа #00BB90%key%&f..."
+  editor-apply-end: "#00BB90&lhSubscription &7› &fУспех!"
+
+  years: " лет"
+  months: " мес."
+  days: " дней"
+  hours: " час"
+  minutes: " мин."
+  seconds: " сек."

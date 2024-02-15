@@ -1,0 +1,40 @@
+version: "1.0"
+
+settings:
+
+  language: "ru_RU"
+  date-format: "HH:mm dd-MM-yyyy"
+
+  gui:
+    subscription: "ru_RU/subscription.yml"
+    admin: "ru_RU/admin.yml"
+
+  database:
+    type: FLAT
+
+    driver: "com.mysql.cj.jdbc.Driver"
+    host: "localhost"
+    port: 3306
+    database: "helium"
+    table: "subscriptions"
+    username: "root"
+    password: "1234"
+
+  editor:
+    server: "https://api.helium-dev.online/"
+
+  task:
+    time: 60
+
+  notification:
+    enabled: true
+
+  cooldown:
+    enabled: true
+    time: 1
+
+  logger:
+    enabled: true
+    path: "logger.txt"
+    format: "%date%: %sender% changed %name%'s subscription to %penaltyDate%"
+    format-delete: "%date%: %sender% removed %name%'s subscription"

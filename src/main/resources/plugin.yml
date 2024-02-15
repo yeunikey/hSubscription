@@ -1,0 +1,18 @@
+name: hSubscription
+version: 1.0
+main: me.xflyiwnl.hsubscription.HSubscription
+api-version: '1.16'
+
+commands:
+
+  subscription:
+    description: "Subscription command for users"
+    aliases:
+      - sub
+      - s
+
+  subscriptionadmin:
+    description: "Subscription command for admins"
+    aliases:
+      - subadmin
+      - sa

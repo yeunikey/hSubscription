@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hSubscription:jar">
+    <output-path>$PROJECT_DIR$/../server/plugins</output-path>
+    <root id="archive" name="hSubscription.jar">
+      <element id="module-output" name="hSubscription" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/xflyiwnl/ColorfulGUI/3.0-fixed/ColorfulGUI-3.0-fixed.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
