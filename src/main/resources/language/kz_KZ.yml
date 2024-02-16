@@ -1,0 +1,88 @@
+language:
+
+  update-last: "&fҚосымшаның ең жаңа нұсқасы қондырылған - #00BB90%version%"
+  need-update: "&cҚосымшаның жаңа нұсқасы шықты! Жүктеу сілтемесі - %url%"
+  source-type: "&fСақтау модулі - #00BB90%type%"
+  sql-created: "&fДеректер қорымен байланыс сәтті орнатылды!"
+  selected-language: "&fТаңдалған тіл - #00BB90%language%"
+
+  command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &fаргументтер тізімі:"
+    - ""
+    - "  &7▪ #00BB90show #009B6C[ойыншы] &7— &fбасқаның жазылымын қарау"
+    - "  &7▪ #00BB90notify &7— &fойынға кіргенде ескерту"
+    - ""
+    - "&7@ helium™ студиясында жасалған"
+    - ""
+
+  admin-command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &fаргументтер тізімі:"
+    - ""
+    - "  &7▪ #00BB90set #009B6C[ойыншы] #009B6C[күн жады] &7— &fжазылым уақытын өзгерту"
+    - "  &7▪ #00BB90give #009B6C[ойыншы] #009B6C[күн жады] &7— &fжазылым уақытына қосу"
+    - "  &7▪ #00BB90take #009B6C[ойыншы] #009B6C[күн жады] &7— &fжазылым уақытын азайту"
+    - "  &7▪ #00BB90gui &7— &fадмин-меню"
+    - ""
+    - "  &7▪ #00BB90editor &7— &fонлайн реттеу"
+    - "  &7▪ #00BB90applyedits #009B6C[кілт] &7— &fреттеулерді орнату"
+    - ""
+    - "&7@ helium™ студиясында жасалған"
+    - ""
+
+  console-show:
+    - " "
+    - " &fОйыншының аты: #00BB90%name%"
+    - " "
+    - " &fЖазылымды берілген уақыты: #00BB90%registeredDate%"
+    - " &fЖазылымның бітетін уақыты: #00BB90%penaltyDate%"
+    - " "
+    - " &fЖазылымның бітуіне: #00BB90%date% &fқалды"
+    - " "
+
+  no-permission: "#00BB90&lhSubscription &7› &fсізге бұл мүмкіндік қолжетімсіз."
+  no-subscription: "#00BB90&lhSubscription &7› &fжазылым табылмады."
+
+  args-error: "#00BB90&lhSubscription &7› &fаргументтер жеткіліксіз."
+  date-error: "#00BB90&lhSubscription &7› &fкүннің жады қате. Дұрыс мысалдар: &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]"
+  console-error: "#00BB90&lhSubscription &7› &fдля консолей данная команда запрещена :)"
+  action-error: "#00BB90&lhSubscription &7› &fәрекет табылмады."
+  editor-error: "#00BB90&lhSubscription &7› &fқателік туындады. сұрақтарыңыз болса #00BB90vk.com/helium_dev&f сілтемесі бойынша жазыңыз."
+
+  subscription-change: "#00BB90&lhSubscription &7› #00BB90%name%&f-ның жазылым уақыты #00BB90%penaltyDate%&f-ге өзгерді."
+  subscription-remove: "#00BB90&lhSubscription &7› #00BB90%name%&f-ның жазылым уақыты аяқталды."
+
+  notify-change-on: "#00BB90&lhSubscription &7› &fенді ойынға кірген кезде, сізге жазылым туралы &aхабарлаймыз."
+  notify-change-off: "#00BB90&lhSubscription &7› &fенді ойынға кірген кезде, сізге жазылым туралы &cхабарламаймыз."
+
+  reloaded: "#00BB90&lhSubscription &7› &fконфигурация сәтті орнатылды."
+
+  kick-message:
+    - "#00BB90hSubscription"
+    - ""
+    - "&fсіздің жазылым уақытыңыз аяқталды :("
+    - ""
+    - "&fЖазылымды қайта жаңарту үшін"
+    - "#00BB90helium-dev.online &fсілтемесіне өтіңіз."
+
+  notification-message:
+    - "#00BB90&lhSubscription &7› &fсіздің жазылымыңыздың аяқталуына #00BB90%date% &fқалды."
+
+  cooldown-message: "#00BB90&lhSubscription &7› &fБіраз уақыттан кейін қайта қолданып көріңіз."
+
+  action-type: "#00BB90&lhSubscription &7› &fБерілген әрекеттің бірін чатқа жазыңыз: &7[#00BB90remove, set, give, take&7]"
+  action-format: "#00BB90&lhSubscription &7› &fКүннің жадын мысал бойынша жазыңыз. Мысалы, &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]"
+
+  editor-generate: "#00BB90&lhSubscription &7› &fСілтеме дайындалуда..."
+  editor-url: "#00BB90&lhSubscription &7› &fДайын! Онлайн реттеу үшін сілтеме - #00BB90%url%"
+
+  editor-apply: "#00BB90&lhSubscription &7› #00BB90%key%&f кілті бойынша өзгерістер еңгізілуде..."
+  editor-apply-end: "#00BB90&lhSubscription &7› &fӨзгерістер сәтті орнатылды!"
+
+  years: " жыл"
+  months: " ай"
+  days: " күн"
+  hours: " сағат"
+  minutes: " минут"
+  seconds: " секунд"

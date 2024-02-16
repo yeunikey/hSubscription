@@ -1,3 +1,7 @@
+
+# hSubscription
+# developed by helium
+
 version: "1.0"
 
 settings:
@@ -7,8 +11,8 @@ settings:
   update-check: true
 
   gui:
-    subscription: "ru_RU/subscription.yml"
-    admin: "ru_RU/admin.yml"
+    subscription: "subscription.yml"
+    admin: "admin.yml"
 
   database:
     type: FLAT

@@ -1,0 +1,50 @@
+gui:
+  title: "Админ-меню"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BBBPBNBBB"
+
+subscription-item:
+  material: book
+  name: "#00BB90%name%-ның жазылымы"
+  lore:
+    - " &8сипаттама"
+    - " "
+    - "  &fБерілген уақыты: #00BB90%registeredDate%"
+    - "  &fБітетін уақыты: #00BB90%penaltyDate%"
+    - " "
+    - " &fБітуіне: #00BB90%date%&fқалды"
+    - " "
+    - " &fреттеу үшін #00BB90басыңыз"
+    - " "
+
+items:
+
+  next-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90Келесі бет"
+    action:
+      - "[next]"
+    mask: "N"
+
+  prev-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90Алдыңғы бет"
+    action:
+      - "[prev]"
+    mask: "P"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› #00BB90helium-dev.online &fстудиясында жасалған"
+    mask: "B"
+

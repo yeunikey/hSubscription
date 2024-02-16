@@ -9,6 +9,7 @@ import me.xflyiwnl.hsubscription.SubscriptionConfig;
 import me.xflyiwnl.hsubscription.database.sql.SQLSubscriptionController;
 import me.xflyiwnl.hsubscription.object.Subscription;
 import me.xflyiwnl.hsubscription.util.Settinger;
+import me.xflyiwnl.hsubscription.util.Translator;
 
 public class SQLDataSource implements DataSource {
 
@@ -18,14 +19,22 @@ public class SQLDataSource implements DataSource {
 
     @Override
     public void load() {
-        api = new WiringAPI(
-                Settinger.ofString("database.driver"),
-                Settinger.ofString("database.host"),
-                Settinger.ofInt("database.port"),
-                Settinger.ofString("database.username"),
-                Settinger.ofString("database.password"),
-                null
-        );
+
+        System.out.println(Translator.ofString("source-type")
+                .replace("%type%", "SQL"));
+
+        try {
+            api = new WiringAPI(
+                    Settinger.ofString("database.driver"),
+                    Settinger.ofString("database.host"),
+                    Settinger.ofInt("database.port"),
+                    Settinger.ofString("database.username"),
+                    Settinger.ofString("database.password"),
+                    null
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         SubscriptionConfig config = SubscriptionConfig.getInstance();
 
@@ -48,6 +57,8 @@ public class SQLDataSource implements DataSource {
         }
 
         subscriptionController = new SQLSubscriptionController(api, database, table);
+
+        System.out.println(Translator.ofString("sql-created"));
     }
 
     @Override

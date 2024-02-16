@@ -1,0 +1,51 @@
+gui:
+  title: "Subscription %name%"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOSOOOB"
+    - "BOOOOOOOB"
+    - "BBBBDBBBB"
+
+items:
+  subscription-item:
+    material: "flower_banner_pattern"
+    amount: 1
+    name: "#00BB90Subscription"
+    lore:
+      - " &8description."
+      - " "
+      - " &fissued: #00BB90%registeredDate%"
+      - " &fto: #00BB90%penaltyDate%"
+      - " "
+      - " &fremaining #00BB90%date%"
+      - ""
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &followed by #00BB90%date%"
+    mask: "S"
+
+  donate-item:
+    material: "emerald"
+    amount: 1
+    name: "#00BB90Buy"
+    lore:
+      - " &8services."
+      - " "
+      - " &fBuy / renew subscription"
+      - " &fyou can on our site!"
+      - " "
+      - " #00BB90▪ helium-dev.online "
+      - " "
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &f buy #00BB90helium-dev.online"
+      - "[cmd]:donate"
+    mask: "D"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &f developed by #00BB90helium-dev.online"
+    mask: "B"

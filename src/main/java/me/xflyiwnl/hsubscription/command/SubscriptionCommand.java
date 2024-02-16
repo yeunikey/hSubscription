@@ -66,7 +66,7 @@ public class SubscriptionCommand implements TabCompleter, CommandExecutor {
         HSubscription instance = HSubscription.getInstance();
         SubscriptionConfig config = SubscriptionConfig.getInstance();
 
-        if (sender instanceof Player) {
+        if (sender instanceof Player && !sender.isOp()) {
             Player player = (Player) sender;
 
             if (!instance.getCooldowns().containsKey(player.getUniqueId())) {

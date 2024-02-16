@@ -2,6 +2,7 @@ package me.xflyiwnl.hsubscription;
 
 import me.xflyiwnl.hsubscription.config.YAML;
 import me.xflyiwnl.hsubscription.util.Settinger;
+import me.xflyiwnl.hsubscription.util.Translator;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -11,6 +12,12 @@ import java.util.List;
 public class FileManager {
 
     private YAML settings, language, subscriptionGUI, adminGUI;
+
+    private List<String> allLanguages = Arrays.asList(
+            "ru_RU",
+            "en_EN",
+            "kz_KZ"
+    );
 
     public FileManager() {
     }
@@ -26,8 +33,20 @@ public class FileManager {
     }
 
     public void generateGUI() {
-        subscriptionGUI = new YAML("gui/" + Settinger.ofString("gui.subscription"));
-        adminGUI = new YAML("gui/" + Settinger.ofString("gui.admin"));
+
+        String selectedLang = Settinger.ofString("language");
+
+        allLanguages.forEach(lang -> {
+
+            if (lang.equals(selectedLang)) {
+                subscriptionGUI = new YAML("gui/" + lang + File.separator + Settinger.ofString("gui.subscription"));
+                adminGUI = new YAML("gui/" + lang + File.separator + Settinger.ofString("gui.admin"));
+            } else {
+                new YAML("gui/" + lang + File.separator + Settinger.ofString("gui.subscription"));
+                new YAML("gui/" + lang + File.separator + Settinger.ofString("gui.admin"));
+            }
+        });
+
     }
 
     public void createFolder(String folder) {
@@ -46,9 +65,6 @@ public class FileManager {
     }
 
     public void generateLanguages() {
-        List<String> allLanguages = Arrays.asList(
-                "ru_RU"
-        );
         allLanguages.forEach(key -> {
             new YAML("language/" + key + ".yml");
         });
@@ -58,16 +74,24 @@ public class FileManager {
 
         HSubscription instance = HSubscription.getInstance();
 
+        String selectedLanguage = Settinger.ofString("language");
+
         File dataFolder = instance.getDataFolder();
-        File languageFile = new File(dataFolder, "language/" + Settinger.ofString("language") + ".yml");
+        File languageFile = new File(dataFolder, "language/" + selectedLanguage + ".yml");
 
         if (languageFile.exists()) {
             language = new YAML(languageFile, YamlConfiguration.loadConfiguration(languageFile));
+
+            System.out.println(Translator.ofString("selected-language")
+                    .replace("%language%", selectedLanguage));
             return;
         }
 
-        String defaultLanguage = SubscriptionConfig.getInstance().getDefaultLanguage();
-        language = new YAML("language/" + defaultLanguage + ".yml");
+        selectedLanguage = SubscriptionConfig.getInstance().getDefaultLanguage();
+        language = new YAML("language/" + selectedLanguage + ".yml");
+
+        System.out.println(Translator.ofString("selected-language")
+                .replace("%language%", selectedLanguage));
 
     }
 

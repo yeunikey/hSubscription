@@ -31,7 +31,7 @@ public final class HSubscription extends JavaPlugin {
     private static HSubscription instance;
 
     private final FileManager fileManager = new FileManager();
-    private final Task task = new SubscriptionTask();
+    private Task task;
     private final SubscriptionConfig config = new SubscriptionConfig();
     private DataSource dataSource;
     private final SubscriptionLogger logger = new SubscriptionLogger();
@@ -57,7 +57,7 @@ public final class HSubscription extends JavaPlugin {
         dataSource.load();
 
         guiApi = new ColorfulGUI(this);
-        task.startTask(config.getTaskTime() * 20);
+        setupTask();
 
         metrics = new Metrics(this, 21005);
 
@@ -70,6 +70,12 @@ public final class HSubscription extends JavaPlugin {
     @Override
     public void onDisable() {
         dataSource.unload();
+    }
+
+    public void setupTask() {
+        if (task != null && !task.isCancelled()) task.cancel();
+        task = new SubscriptionTask();
+        task.startTask(config.getTaskTime() * 20);
     }
 
     public void setupDatabase() {

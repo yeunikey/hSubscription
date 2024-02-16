@@ -1,0 +1,88 @@
+language:
+
+  update-last: "&fThe latest version of the plugin has been installed - #00BB90%version%"
+  need-update: "&cNew version of plugin found! Download link - %url%"
+  source-type: "&fStorage type - #00BB90%type%"
+  sql-created: "&fCommunication with database successfully established!"
+  selected-language: "&fSelected-language - #00BB90%language%"
+
+  command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &fList of arguments:"
+    - ""
+    - " &7▪ #00BB90show #009B6C[player] &7- &fview subscription "
+    - " &7▪ #00BB90notify &7- &fnotify on login"
+    - ""
+    - " &7@ Developed by helium™"
+    - ""
+
+  admin-command-args:
+    - ""
+    - "#00BB90&lhSubscription &7› &flist of arguments:"
+    - ""
+    - " &7▪ #00BB90set #009B6C[player] #009B6C[date] &7- &fchange subscription"
+    - " &7▪ #00BB90give #009B6C[player] #009B6C[date] &7- &fadd to subscription"
+    - " &7▪ #00BB90take #009B6C[player] #009B6C[date] &7- &from unsubscribe"
+    - " &7▪ #00BB90gui &7- &fadmin-menu"
+    - ""
+    - " &7▪ #00BB90editor &7- &fonline-editor"
+    - " &7▪ #00BB90applyedits #009B6C[key] &7- &fapply settings"
+    - ""
+    - "&7@Developed by helium™"
+    - ""
+
+  console-show:
+    - " "
+    - " &fName: #00BB90%name%"
+    - " "
+    - " &fReleased: #00BB90%registeredDate%"
+    - " &fTo: #00BB90%penaltyDate%"
+    - " "
+    - " &fRemaining: #00BB90%date%"
+    - " "
+
+  no-permission: "#00BB90&lhSubscription &7› &fyou have no rights :L"
+  no-subscription: "#00BB90&lhSubscription &7› &fthere is no subscription."
+
+  args-error: "#00BB90&lhSubscription &7› &fnot enough arguments for a valid command"
+  date-error: "#00BB90&lhSubscription &7› &fdate format error. Here are examples, &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]'"
+  console-error: "#00BB90&lhSubscription &7› &fthis command is forbidden for consoles :)"
+  action-error: "#00BB90&lhSubscription &7› &faction of this type does not exist"
+  editor-error: "#00BB90&lhSubscription &7› &fsome error occurred"
+
+  subscription-change: "#00BB90&lhSubscription &7› &fsubscription time for #00BB90%name% &fchanged to #00BB90%penaltyDate%"
+  subscription-remove: "#00BB90&lhSubscription &7› &fsubscription for #00BB90%name% &fnow invalid"
+
+  notify-change-on: "#00BB90&lhSubscription &7› &fyou are now receiving &fnotifications"
+  notify-change-off: "#00BB90&lhSubscription &7› &from now on you will not receive notifications"
+
+  reloaded: "#00BB90&lhSubscription &7› &fconfiguration reloaded"
+
+  kick-message:
+    - "#00BB90hSubscription"
+    - ""
+    - "&fYou are not subscribed :("
+    - ""
+    - "&fYou can buy it."
+    - "&fhere: #00BB90helium-dev.online"
+
+  notification-message:
+    - "#00BB90&lhSubscription &7› &ftime left until subscription expires #00BB90%date%"
+
+  cooldown-message: "#00BB90&lhSubscription &7› &fColdown! Try again a little later."
+
+  action-type: "#00BB90&lhSubscription &7› &fSelect action: &7[#00BB90remove, set, give, take&7]"
+  action-format: "#00BB90&lhSubscription &7› &fWrite a formatted date. For example, &7[#00BB9030:day&7], &7[#00BB9015:day,12:hour&7]"
+
+  editor-generate: "#00BB90&lhSubscription&7' &fGenerating a link for you..."
+  editor-url: "#00BB90&lhSubscription &7› &fGenerated! Your link is #00BB90%url%'"
+
+  editor-apply: "#00BB90&lhSubscription &7› &fGenerating your key settings #00BB90%key%&f..."
+  editor-apply-end: "#00BB90&lhSubscription &7› &fSuccess!"
+
+  years: " years"
+  months: " months"
+  days: " days"
+  hours: " hour"
+  minutes: " min."
+  seconds: " sec."

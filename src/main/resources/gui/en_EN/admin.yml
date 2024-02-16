@@ -1,0 +1,49 @@
+gui:
+  title: "admin menu"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BOOOOOOOB"
+    - "BBBPBNBBB"
+
+subscription-item:
+  material: book
+  name: "#00BB90Subscription %name%"
+  lore:
+    - " &8description."
+    - " "
+    - " &fissued: #00BB90%registeredDate%"
+    - " &fto: #00BB90%penaltyDate%"
+    - " "
+    - " &fremaining #00BB90%date%"
+    - ""
+    - " #00BB90click &7- &fedit"
+    - " "
+
+items:
+
+  next-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90Next Page"
+    action:
+      - "[next]"
+    mask: "N"
+
+  prev-item:
+    material: "arrow"
+    amount: 1
+    name: "#00BB90Previous page"
+    action:
+      - "[prev]"
+    mask: "P"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &f developed by #00BB90helium-dev.online"
+    mask: "B"

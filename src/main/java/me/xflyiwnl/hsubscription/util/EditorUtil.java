@@ -9,21 +9,22 @@ import me.xflyiwnl.hsubscription.SubscriptionConfig;
 import me.xflyiwnl.hsubscription.object.Subscription;
 import me.xflyiwnl.hsubscription.request.GetRequest;
 import me.xflyiwnl.hsubscription.request.PostRequest;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 
 public class EditorUtil {
 
@@ -86,8 +87,18 @@ public class EditorUtil {
                     return;
                 }
 
-                sender.sendMessage(Translator.ofString("editor-url")
-                        .replace("%url%", result.get("url").getAsString()));
+                String url = result.get("url").getAsString();
+
+                TextComponent textComponent = new TextComponent();
+
+                for (BaseComponent component : TextComponent.fromLegacyText(Translator.ofString("editor-url")
+                        .replace("%url%", url))) {
+                    component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(url)));
+                    component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
+                    textComponent.addExtra(component);
+                }
+
+                sender.sendMessage(textComponent);
 
             }
 

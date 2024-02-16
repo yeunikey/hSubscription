@@ -1,7 +1,14 @@
 package me.xflyiwnl.hsubscription.task;
 
-public interface Task {
+import org.bukkit.scheduler.BukkitRunnable;
 
-    void startTask(long time);
+public abstract class Task extends BukkitRunnable {
+
+    public abstract void startTask(long time);
+
+    @Override
+    public void run() {
+
+    }
 
 }

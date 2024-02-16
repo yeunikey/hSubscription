@@ -3,6 +3,7 @@ package me.xflyiwnl.hsubscription.database;
 import me.xflyiwnl.hsubscription.HSubscription;
 import me.xflyiwnl.hsubscription.database.flat.FlatSubscriptionController;
 import me.xflyiwnl.hsubscription.object.Subscription;
+import me.xflyiwnl.hsubscription.util.Translator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,9 @@ public class FlatDataSource implements DataSource {
 
     @Override
     public void load() {
+        System.out.println(Translator.ofString("source-type")
+                .replace("%type%", "FLAT"));
+
         HSubscription.getInstance().getFileManager().createFolder("database");
         subscriptionController.allFromFiles().forEach(subscription -> {
             subscriptions.put(subscription.getName(), subscription);

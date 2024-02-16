@@ -2,6 +2,7 @@ package me.xflyiwnl.hsubscription.command;
 
 import me.xflyiwnl.hsubscription.HSubscription;
 import me.xflyiwnl.hsubscription.SubscriptionConfig;
+import me.xflyiwnl.hsubscription.database.DataType;
 import me.xflyiwnl.hsubscription.gui.AdminGUI;
 import me.xflyiwnl.hsubscription.object.Subscription;
 import me.xflyiwnl.hsubscription.util.EditorUtil;
@@ -130,7 +131,7 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
         HSubscription instance = HSubscription.getInstance();
         SubscriptionConfig config = SubscriptionConfig.getInstance();
 
-        if (sender instanceof Player) {
+        if (sender instanceof Player && !sender.isOp()) {
             Player player = (Player) sender;
 
             if (!instance.getCooldowns().containsKey(player.getUniqueId())) {
@@ -198,6 +199,12 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
                 instance.getFileManager().generate();
                 instance.getSubscriptionConfig().setup();
 
+                if (config.getDataType() == DataType.FLAT) {
+                    instance.getFileManager().createFolder("database");
+                }
+
+                instance.setupTask();
+
                 sender.sendMessage(Translator.ofString("reloaded"));
             }
             case "remove" -> {
@@ -263,6 +270,11 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
 
                     penaltyDate = unformatDate(penaltyDate, splitted, true);
 
+                    if (penaltyDate == null) {
+                        error = true;
+                        break;
+                    }
+
                 }
 
                 if (error) {
@@ -322,6 +334,11 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
 
                     penaltyDate = unformatDate(penaltyDate, splitted, true);
 
+                    if (penaltyDate == null) {
+                        error = true;
+                        break;
+                    }
+
                 }
 
                 if (error) {
@@ -380,6 +397,11 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
 
                     penaltyDate = unformatDate(penaltyDate, splitted, false);
 
+                    if (penaltyDate == null) {
+                        error = true;
+                        break;
+                    }
+
                 }
 
                 if (error) {
@@ -411,12 +433,25 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
 
     }
 
+    private List<String> formats = Arrays.asList(
+            "year",
+            "mon",
+            "day",
+            "hour",
+            "min",
+            "sec"
+    );
+
     public LocalDateTime unformatDate(LocalDateTime date, String[] splitted, boolean plus) {
 
         LocalDateTime penaltyDate = date;
 
         int num = Integer.parseInt(splitted[0]);
         String type = splitted[1];
+
+        if (!formats.contains(type)) {
+            return null;
+        }
 
         if (type.equalsIgnoreCase("year"))
             penaltyDate = plus ? penaltyDate.plusYears(num) : penaltyDate.minusYears(num);

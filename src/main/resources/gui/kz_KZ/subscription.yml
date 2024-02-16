@@ -1,0 +1,53 @@
+gui:
+  title: "%name%-ның жазылымы"
+  rows: 5
+  mask:
+    - "BBBBBBBBB"
+    - "BOOOOOOOB"
+    - "BOOOSOOOB"
+    - "BOOOOOOOB"
+    - "BBBBDBBBB"
+
+items:
+
+  subscription-item:
+    material: "flower_banner_pattern"
+    amount: 1
+    name: "#00BB90Жазылым"
+    lore:
+      - " &8сипаттама"
+      - " "
+      - "  &fБерілген уақыты: #00BB90%registeredDate%"
+      - "  &fБітетін уақыты: #00BB90%penaltyDate%"
+      - " "
+      - " &fБітуіне: #00BB90%date%&fқалды"
+      - " "
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fЖазылымның бітуіне: #00BB90%date% &fқалды"
+    mask: "S"
+
+  donate-item:
+    material: "emerald"
+    amount: 1
+    name: "#00BB90Жазылымды сатып алу"
+    lore:
+      - " &8қызмет"
+      - " "
+      - "  &fБіздің сайтымызда сіз өзіңіздің"
+      - "  &fжазылымыңызды ұзарта / сатып ала аласыз!"
+      - " "
+      - " #00BB90▪ helium-dev.online"
+      - " "
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› &fсілтеме - #00BB90helium-dev.online"
+      - "[cmd]:donate"
+    mask: "D"
+
+  border-item:
+    material: "black_stained_glass_pane"
+    amount: 1
+    name: "#00BB90helium"
+    action:
+      - "[msg]:#00BB90&lhSubscription &7› #00BB90helium-dev.online &fстудиясында жасалған"
+    mask: "B"
+

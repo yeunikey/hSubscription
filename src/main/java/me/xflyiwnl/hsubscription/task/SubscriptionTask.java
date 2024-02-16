@@ -5,13 +5,12 @@ import me.xflyiwnl.hsubscription.object.Subscription;
 import me.xflyiwnl.hsubscription.util.SubscriptionUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class SubscriptionTask extends BukkitRunnable implements Task {
+public class SubscriptionTask extends Task {
 
     public SubscriptionTask() {
     }
