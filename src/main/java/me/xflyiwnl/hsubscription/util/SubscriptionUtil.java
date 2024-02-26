@@ -46,6 +46,11 @@ public class SubscriptionUtil {
         StringBuilder sb = new StringBuilder();
         Duration duration = Duration.between(LocalDateTime.now(), subscription.getPenaltyDate());
 
+        if (duration.isNegative()) {
+            sb.append("0");
+            return sb.toString();
+        }
+
         long years = duration.toDaysPart() / 365;
         long days = years != 0 ? duration.toDaysPart() - (years * 365) : duration.toDaysPart();
         long months = days != 0 ? (days / 30) : 0;

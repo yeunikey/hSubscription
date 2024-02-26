@@ -1,7 +1,9 @@
 name: hSubscription
-version: 1.0
+version: 1.1
 main: me.xflyiwnl.hsubscription.HSubscription
 api-version: '1.16'
+softdepend:
+  - PlaceholderAPI
 
 commands:
 

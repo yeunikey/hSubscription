@@ -10,6 +10,7 @@ import me.xflyiwnl.hsubscription.database.FlatDataSource;
 import me.xflyiwnl.hsubscription.database.SQLDataSource;
 import me.xflyiwnl.hsubscription.listener.PlayerListener;
 import me.xflyiwnl.hsubscription.object.Subscription;
+import me.xflyiwnl.hsubscription.placeholder.SubscriptionExpansion;
 import me.xflyiwnl.hsubscription.task.SubscriptionTask;
 import me.xflyiwnl.hsubscription.task.Task;
 import me.xflyiwnl.hsubscription.util.Metrics;
@@ -63,6 +64,10 @@ public final class HSubscription extends JavaPlugin {
 
         if (config.isUpdateCheck()) {
             Updater.check();
+        }
+
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new SubscriptionExpansion().register();
         }
 
     }

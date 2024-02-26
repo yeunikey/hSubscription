@@ -61,6 +61,10 @@ public class AdminGUI extends ColorfulProvider<PaginatedGui> {
                             } else if (a.startsWith("[cmd]:")) {
                                 getPlayer().performCommand(
                                         a.replace("[cmd]:", ""));
+                            } else if (a.startsWith("[next]")) {
+                                getGui().next();
+                            } else if (a.startsWith("[prev]")) {
+                                getGui().previous();
                             }
                         });
                     })

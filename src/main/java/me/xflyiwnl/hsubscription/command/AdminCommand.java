@@ -131,7 +131,7 @@ public class AdminCommand implements TabCompleter, CommandExecutor {
         HSubscription instance = HSubscription.getInstance();
         SubscriptionConfig config = SubscriptionConfig.getInstance();
 
-        if (sender instanceof Player && !sender.isOp()) {
+        if (sender instanceof Player && !sender.isOp() && config.isCooldowns()) {
             Player player = (Player) sender;
 
             if (!instance.getCooldowns().containsKey(player.getUniqueId())) {
